@@ -9,3 +9,4 @@ _onChanged(bool value) async {
     getCredential();
   });
 }
+"assets/icon/applogo.jpeg"
