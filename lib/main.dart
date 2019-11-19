@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Hi5',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -25,7 +25,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String url="https://hi5tpc.in";
+  String url = "https://hi5tpc.in";
   String urlS;
   SharedPreferences sharedPreferences;
   @override
@@ -34,17 +34,17 @@ class _MyHomePageState extends State<MyHomePage> {
     getLastURL();
   }
 
-  void  getLastURL() async {
+  void getLastURL() async {
     sharedPreferences = await SharedPreferences.getInstance();
     String lastURL = sharedPreferences.getString('LastURL');
-    
+
     if (lastURL == null) {
       lastURL = "https://hi5tpc.in";
-    } 
+    }
     setState(() {
       print(lastURL);
       urlS = lastURL;
-      print("Its last url is "+urlS);
+      print("Its last url is " + urlS);
     });
   }
 
@@ -54,12 +54,10 @@ class _MyHomePageState extends State<MyHomePage> {
         // appBar: AppBar(
         //   backgroundColor: Colors.white,
         // ),
-        body: (urlS != null) ? new WebViewContainer(urlS):
-          new Center(
-                   child: new CircularProgressIndicator(),
-                 )
-        );
+        body: (urlS != null)
+            ? new WebViewContainer(urlS)
+            : new Center(
+                child: new CircularProgressIndicator(),
+              ));
   }
-
-  
 }
