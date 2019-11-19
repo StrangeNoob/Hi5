@@ -25,7 +25,7 @@ before_deploy:
 deploy:
   provider: releases
   api_key:
-    secure: https://api.travis-ci.org
+    secure: EaddOKo0mRmDvffD6Ft2tA
   file: build/ios/iphoneos/app.ipa
   skip_cleanup: true #important or your built app would be deleted
   on:
