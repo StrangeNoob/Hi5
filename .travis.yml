@@ -27,6 +27,6 @@ deploy:
   api_key:
     secure: EaddOKo0mRmDvffD6Ft2tA
   file: build/ios/iphoneos/app.ipa
-  skip_cleanup: true #important or your built app would be deleted
+  cleanup: true #important or your built app would be deleted
   on:
     repo: https://github.com/StrangeNoob/Hi5.git
